@@ -164,10 +164,9 @@ header .nav .nav__list {
 
 @media (max-width: 768px) {
     header .nav .nav__list {
-        display: none;
         position: fixed;
         top: 0;
-        right: 0;
+        right: -70%;
         width: 70%;
         height: 100dvh;
         display: flex;
@@ -177,13 +176,14 @@ header .nav .nav__list {
         align-items: flex-start;
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         background-color: #332525;
+        transition: right .3s ease-in-out;
     }
 
     body.menu header .nav .nav__list {
-        display: block;
+        right: 0%;
     }
 
-    body.menu .header__inner button {
+    .header__inner button {
         display: none;
     }
 
@@ -195,11 +195,4 @@ header .nav .nav__list {
         display: block;
     }
 
-    header .logo {
-        /* position: absolute;
-        top: 10px;
-        right: 33%;
-        z-index: 20;
-        font-size: 18px !important; */
-    }
 }
