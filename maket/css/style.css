@@ -13,7 +13,7 @@ body {
 
 header {
     padding-top: 37px;
-    margin-bottom: 94px;
+    margin-bottom: clamp(3.75rem, 1.218rem + 6.137vw, 5.875rem);
 }
 
 header .burger {
@@ -133,14 +133,14 @@ header .nav .nav__list {
 
 
 .header__inner button:active {
-    transform: translateY(-1px);
+    transform: translateY(-2px);
 }
 
-@media(hover: hover) {
+/* @media(hover: hover) {
     .header__inner button:hover {
         transform: translateY(-1px);
     }
-}
+} */
 
 
 @media (max-width: 900px) {
@@ -178,6 +178,7 @@ header .nav .nav__list {
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         background-color: #332525;
         transition: right .3s ease-in-out;
+        z-index: 4;
     }
 
     body.menu header .nav .nav__list {
@@ -194,6 +195,7 @@ header .nav .nav__list {
 
     header .burger {
         display: block;
+        z-index: 5;
     }
 
 }
@@ -219,6 +221,8 @@ header .nav .nav__list {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-bottom: 53px;
+
 }
 
 .hero__content {
@@ -228,7 +232,7 @@ header .nav .nav__list {
 h1 {
     font-family: 'Axiforma', sans-serif;
     font-weight: 900;
-    font-size: 56px;
+    font-size: clamp(2.188rem, 0.624rem + 3.791vw, 3.5rem);
     line-height: 130%;
     color: #FFFFFF;
     padding-bottom: 32px;
@@ -252,7 +256,7 @@ h1 {
     color: #FFFFFF;
     opacity: 0.8;
     padding-bottom: 64px;
-    max-width: 485px;
+    max-width: clamp(24.563rem, 17.713rem + 15.606vw, 30.313rem);
 }
 
 .hero__btn {
@@ -280,6 +284,7 @@ h1 {
 
 .hero__image {
     position: relative;
+    padding-right: 35px;
 }
 
 .hero__badge {
@@ -289,8 +294,8 @@ h1 {
 .hero__badge::after {
     content: '';
     position: absolute;
-    width: 570px;
-    height: 570px;
+    width: clamp(16.875rem, -5.463rem + 54.152vw, 35.625rem);
+    height: clamp(16.875rem, -5.463rem + 54.152vw, 35.625rem);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -309,8 +314,8 @@ h1 {
 
 
 .hero__badge img {
-    width: 503px;
-    height: 503px;
+    width: clamp(12.688rem, -9.65rem + 54.152vw, 31.438rem);
+    height: clamp(12.688rem, -9.65rem + 54.152vw, 31.438rem);
     border-radius: 50%;
 }
 
@@ -319,8 +324,8 @@ h1 {
     bottom: -11.5%;
     left: -5%;
 
-    width: 177px;
-    height: 177px;
+    width: clamp(4.375rem, -3.592rem + 19.314vw, 11.063rem);
+    height: clamp(4.375rem, -3.592rem + 19.314vw, 11.063rem);
     border-radius: 50%;
     border: 1px solid red;
     display: flex;
@@ -335,10 +340,89 @@ h1 {
     span {
         font-family: 'Poppins', sans-serif;
         font-weight: 700;
-        font-size: 24px;
+        font-size: clamp(0.813rem, -0.007rem + 1.986vw, 1.5rem);
         line-height: 118.5%;
         color: #FFFFFF;
         text-align: center;
     }
+}
+
+
+.overview__header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 16px;
+
+    img {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+.overview__title {
+    font-family: 'Axiforma', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 118.5%;
+    color: #FFFFFF;
+}
+
+.overview__stats {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+
+    .overview__stat {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        .overview__label {
+            font-family: 'Helvetica', sans-serif;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 150%;
+            color: #FFFFFF;
+            opacity: 0.8;
+        }
+
+        .overview__value {
+            font-family: 'Axiforma', sans-serif;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 118.5%;
+            color: #FFFFFF;
+        }
+    }
+}
+
+
+@media(max-width: 800px) {
+    .hero__content img {
+        display: none;
+    }
+
+    .hero__cover {
+        align-items: flex-start;
+    }
+}
+
+
+@media(max-width: 660px) {
+    .hero__cover {
+        flex-direction: column-reverse;
+    }
+
+    .hero__image {
+        padding-right: 0px;
+        margin-bottom: 40px;
+        align-self: center;
+    }
+
+    .hero__content p {
+        max-width: 100%;
+    }
+
 
 }
