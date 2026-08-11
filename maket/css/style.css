@@ -169,7 +169,7 @@ header .nav .nav__list {
         top: 0;
         right: -70%;
         width: 70%;
-        height: 100dvh;
+        height: 100%;
         display: flex;
         flex-direction: column;
         padding: 30px;
@@ -407,7 +407,7 @@ h1 {
 .section-title {
     font-family: 'Axiforma', sans-serif;
     font-weight: 300;
-    font-size: 40px;
+    font-size: clamp(1.938rem, -0.312rem + 11.250vw, 2.5rem);
     line-height: 130%;
     color: #1EE0E1;
     text-align: center;
@@ -447,6 +447,145 @@ h1 {
     background: url('../img/popular/decore.svg') center center / 100% auto no-repeat;
     z-index: -1;
 }
+
+.popular .popular__tabs li.active {
+    color: #fff;
+    /* font-weight: 600; */
+    opacity: 1;
+}
+
+/* ///////////////////////////// */
+
+.popular__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 32px;
+}
+
+
+.popular__grid article {
+    /* width: 405px; */
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card__img-wrapper {
+    position: relative;
+    padding-bottom: 32px;
+
+}
+
+.card__img-wrapper>img {
+    box-shadow: 0px 9px 100px rgba(204, 17, 208, 0.15);
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+}
+
+.card__img-wrapper button {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.09);
+    border-radius: 8px;
+    cursor: pointer;
+
+    img {
+        width: 24px;
+        height: 24px;
+    }
+
+    &:active {
+        transform: translateY(-2px);
+    }
+}
+
+.card__body {
+    margin-top: auto;
+}
+
+
+.card__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 11px;
+
+    .card__name {
+        font-family: 'Axiforma', sans-serif;
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 118.5%;
+        color: #FFFFFF;
+    }
+
+    .card__price {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+
+        img {
+            width: 32px;
+            height: 32px;
+        }
+
+        span {
+            font-family: 'Axiforma', sans-serif;
+            font-weight: 600;
+            font-size: 22px;
+            line-height: 118.5%;
+            color: #fff;
+        }
+    }
+}
+
+.card__body .card__rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* padding-bottom: 32px; */
+
+    img {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+.card__body .card__btn {
+    font-family: 'Helvetica', sans-serif;
+    background: linear-gradient(103.84deg, #DF1CFF -25.59%, #EA0070 138%);
+    box-shadow: 0px 9px 100px rgba(208, 17, 204, 0.35);
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    color: #FFFFFF;
+    width: 100%;
+    padding: 12px 0;
+    max-width: 500px;
+    cursor: pointer;
+    margin-top: 32px;
+}
+
+@media (hover: hover) {
+    .card__body .card__btn:hover {
+        opacity: .8;
+    }
+}
+
+.card__body .card__btn:active {
+    transform: translateY(-2px);
+}
+
+
 
 
 
@@ -502,6 +641,20 @@ h1 {
     }
 }
 
+@media (max-width: 755px) {
+    .popular__tabs {
+        display: flex;
+        justify-content: space-between;
+        column-gap: 40px;
+        row-gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .popular .popular__tabs li.active::after {
+        content: none;
+    }
+}
+
 @media(max-width: 660px) {
     .overview__label {
         font-size: 17px !important;
@@ -510,4 +663,25 @@ h1 {
     .overview__value {
         font-size: 22px;
     }
+}
+
+@media (max-width: 512px) {
+    .popular__tabs {
+        justify-content: flex-start;
+    }
+
+}
+
+@media (max-width: 400px) {
+    .section-title {
+        font-weight: 600;
+    }
+}
+
+@media (max-width: 380px) {
+    .hero__content>a {
+        width: 100%;
+        text-align: center;
+    }
+
 }
