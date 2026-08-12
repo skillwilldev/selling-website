@@ -838,9 +838,9 @@ h1 {
 
 
 
-.brands {
+/* .brands {
     margin-bottom: 130px;
-}
+} */
 
 .brands__row {
     display: grid;
@@ -849,6 +849,7 @@ h1 {
     gap: 40px 40px;
     justify-items: center;
     align-items: center;
+    margin-bottom: 130px;
 
     /* img {
         width: 100%;
