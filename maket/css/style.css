@@ -958,6 +958,52 @@ h1 {
 }
 
 
+.touch {
+    margin-bottom: 130px;
+}
+
+.touch__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 28px;
+    padding-bottom: 48px;
+}
+
+.touch__title {
+    font-family: 'Axiforma', sans-serif;
+    font-weight: 800;
+    font-size: 72px;
+    line-height: 130%;
+    color: #FFFFFF;
+    text-align: center;
+    position: relative;
+
+    &::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transform: translate(1.0%, 5%);
+        color: transparent;
+        -webkit-text-stroke: 2px #1EE0E1;
+    }
+}
+
+.touch__text {
+    font-family: 'Helvetica', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+    color: #FFFFFF;
+    opacity: 0.8;
+    max-width: 620px;
+    text-align: center;
+}
+
+
 @media (max-width: 1280px) {
     .trending__row {
         gap: 20px;
