@@ -923,7 +923,7 @@ h1 {
 .touch__title {
     font-family: 'Axiforma', sans-serif;
     font-weight: 800;
-    font-size: 72px;
+    font-size: clamp(2.75rem, 1.103rem + 8.235vw, 4.5rem);
     line-height: 130%;
     color: #FFFFFF;
     text-align: center;
@@ -944,7 +944,7 @@ h1 {
 .touch__text {
     font-family: 'Helvetica', sans-serif;
     font-weight: 400;
-    font-size: 20px;
+    font-size: clamp(1.063rem, 0.886rem + 0.882vw, 1.25rem);
     line-height: 150%;
     color: #FFFFFF;
     opacity: 0.8;
@@ -954,7 +954,7 @@ h1 {
 
 
 .touch .touch__form {
-    margin-bottom: 130px;
+    margin-bottom: clamp(3.75rem, -0.368rem + 20.588vw, 8.125rem);
 
     .form__input {
         display: flex;
@@ -965,18 +965,18 @@ h1 {
     input[type="email"] {
         background-color: #0D0D2D;
         border-radius: 16px;
-        padding: 25px;
+        padding: clamp(0.938rem, 0.349rem + 2.941vw, 1.563rem);
         width: 100%;
         max-width: 715px;
         color: #fff;
         font-weight: 400;
-        font-size: 22px;
+        font-size: clamp(1.063rem, 0.592rem + 2.353vw, 1.563rem);
     }
 
     input[type="email"]::placeholder {
         font-family: 'Axiforma', sans-serif;
         font-weight: 400;
-        font-size: 22px;
+        font-size: clamp(1.063rem, 0.592rem + 2.353vw, 1.563rem);
         line-height: 118.5%;
         color: rgba(255, 255, 255, 0.56);
     }
@@ -1012,6 +1012,8 @@ h1 {
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 65px;
+    gap: 30px;
+    flex-wrap: wrap;
 
     .touch__contact-col {
         display: flex;
@@ -1025,14 +1027,14 @@ h1 {
         span {
             font-family: 'Helvetica', sans-serif;
             font-weight: 400;
-            font-size: 20px;
+            font-size: clamp(1.125rem, 1.007rem + 0.588vw, 1.25rem);
             line-height: 118.5%;
             color: #fff;
         }
 
         .touch__contacts-decore {
-            width: 80px;
-            height: 80px;
+            width: clamp(3.938rem, 2.938rem + 5.000vw, 5rem);
+            height: clamp(3.938rem, 2.938rem + 5.000vw, 5rem);
             background-color: #1A124F;
             border-radius: 50%;
             position: relative;
@@ -1041,8 +1043,8 @@ h1 {
             &::after {
                 content: '';
                 position: absolute;
-                width: 47px;
-                height: 47px;
+                width: clamp(1.875rem, 0.875rem + 5.000vw, 2.938rem);
+                height: clamp(1.875rem, 0.875rem + 5.000vw, 2.938rem);
                 background-color: #100943;
                 border-radius: 50%;
                 top: 50%;
@@ -1065,12 +1067,12 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 65px 0px 67px 0px;
+    padding: clamp(1.875rem, -0.925rem + 14.000vw, 4.063rem) 0px clamp(2rem, -0.8rem + 14.000vw, 4.188rem) 0px;
 
     >p {
         font-family: inherit;
         font-weight: 400;
-        font-size: 20px;
+        font-size: clamp(0.875rem, 0.395rem + 2.400vw, 1.25rem);
         line-height: 150%;
         color: #FFFFFF;
         opacity: 0.8;
@@ -1087,12 +1089,12 @@ footer .footer__nav-item.active {
 }
 
 footer .footer__nav-list li:not(:last-child) {
-    margin-right: 45px;
+    margin-right: clamp(0.625rem, -2.175rem + 14.000vw, 2.813rem);
 }
 
 footer .footer__nav-list li {
     font-weight: 400;
-    font-size: 20px;
+    font-size: clamp(0.875rem, 0.395rem + 2.400vw, 1.25rem);
     line-height: 118.5%;
     color: rgba(255, 255, 255, 0.43);
 }
@@ -1162,6 +1164,17 @@ footer .footer__nav-list li {
 
     .trending__card-body .trending__card-title {
         max-width: 290px;
+    }
+
+    footer .footer__inner {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    footer .footer__nav {
+        display: flex;
+        justify-content: center;
+        width: 100%;
     }
 }
 
@@ -1301,6 +1314,11 @@ footer .footer__nav-list li {
     .popular .popular__tabs li.active::after {
         content: none;
     }
+
+    .touch__contacts {
+        justify-content: space-between;
+        row-gap: clamp(1.875rem, 0.955rem + 4.598vw, 3.125rem);
+    }
 }
 
 @media(max-width: 660px) {
@@ -1337,6 +1355,16 @@ footer .footer__nav-list li {
     }
 }
 
+@media (max-width: 590px) {
+    .footer__inner {
+        justify-content: center;
+    }
+
+    /* footer .footer__copyright {
+        text-align: center;
+    } */
+}
+
 @media (max-width: 512px) {
     .popular__tabs {
         justify-content: flex-start;
@@ -1361,6 +1389,15 @@ footer .footer__nav-list li {
 
 
 
+}
+
+@media (max-width: 435px) {
+    .touch__contacts {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 @media (max-width: 400px) {
