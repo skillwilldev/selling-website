@@ -1289,7 +1289,7 @@ footer .footer__nav-list li {
         top: 0;
         right: -70%;
         width: 70%;
-        height: 100dvh;
+        height: 100vh;
         display: flex;
         flex-direction: column;
         padding: 30px;
