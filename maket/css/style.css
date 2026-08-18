@@ -102,25 +102,25 @@ header .burger span {
 header .burger span:nth-child(1) {
     top: 0;
     left: 0;
-    background-color: var( --color-primary);
+    background-color: var(--color-primary);
 }
 
 header .burger span:nth-child(3) {
     right: 0;
     top: 0;
-    background-color: var( --color-secondary);
+    background-color: var(--color-secondary);
 }
 
 header .burger span:nth-child(7) {
     bottom: 0;
     left: 0;
-    background-color: var( --color-secondary);
+    background-color: var(--color-secondary);
 }
 
 header .burger span:nth-child(9) {
     bottom: 0;
     right: 0;
-    background-color: var( --color-secondary);
+    background-color: var(--color-secondary);
 }
 
 header .burger span:nth-child(5) {
@@ -135,28 +135,28 @@ header .burger span:nth-child(2) {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    background-color: var( --color-secondary);
+    background-color: var(--color-secondary);
 }
 
 header .burger span:nth-child(4) {
     top: 50%;
     left: 0;
     transform: translateY(-50%);
-    background-color: var( --color-secondary);
+    background-color: var(--color-secondary);
 }
 
 header .burger span:nth-child(6) {
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    background-color: var( --color-secondary);
+    background-color: var(--color-secondary);
 }
 
 header .burger span:nth-child(8) {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    background-color: var( --color-secondary);
+    background-color: var(--color-secondary);
 }
 
 
@@ -1053,6 +1053,7 @@ h1 {
 
     input[type="email"] {
         background-color: #0D0D2D;
+        border: 1px solid transparent;
         border-radius: 16px;
         padding: clamp(0.938rem, 0.349rem + 2.941vw, 1.563rem);
         width: 100%;
@@ -1060,6 +1061,12 @@ h1 {
         color: #fff;
         font-weight: 400;
         font-size: clamp(1.063rem, 0.592rem + 2.353vw, 1.563rem);
+        transition: border-color .15s, box-shadow .15s;
+    }
+
+    input[type="email"]:focus {
+        border-color: #1f6feb;
+        box-shadow: 0 0 0 3px #1f6feb40;
     }
 
     input[type="email"]::placeholder {
