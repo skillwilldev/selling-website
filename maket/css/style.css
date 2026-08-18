@@ -16,7 +16,7 @@ header {
     margin-bottom: clamp(3.75rem, 1.218rem + 6.137vw, 5.875rem);
 }
 
-header .burger {
+/* header .burger {
     display: none;
     position: relative;
     width: 30px;
@@ -68,6 +68,95 @@ header .burger.open::before {
 
 header .burger.open::after {
     transform: translateY(-9px) rotate(-45deg);
+} */
+
+
+header .burger {
+    display: none;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: all .1s ease-in-out;
+
+    --color-primary: #00E5FF;
+    /* Pantone-inspired Bright Cyan / Electric Blue */
+    --color-secondary: #2C3E50;
+    /* Pantone Classic Navy/Slate */
+    --color-accent: #FFFFFF;
+    /* Crisp White */
+}
+
+header .burger:active {
+    transform: scale(80%);
+}
+
+header .burger span {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+}
+
+header .burger span:nth-child(1) {
+    top: 0;
+    left: 0;
+    background-color: var( --color-primary);
+}
+
+header .burger span:nth-child(3) {
+    right: 0;
+    top: 0;
+    background-color: var( --color-secondary);
+}
+
+header .burger span:nth-child(7) {
+    bottom: 0;
+    left: 0;
+    background-color: var( --color-secondary);
+}
+
+header .burger span:nth-child(9) {
+    bottom: 0;
+    right: 0;
+    background-color: var( --color-secondary);
+}
+
+header .burger span:nth-child(5) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--color-accent);
+}
+
+/* ////////// */
+header .burger span:nth-child(2) {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var( --color-secondary);
+}
+
+header .burger span:nth-child(4) {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-color: var( --color-secondary);
+}
+
+header .burger span:nth-child(6) {
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var( --color-secondary);
+}
+
+header .burger span:nth-child(8) {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var( --color-secondary);
 }
 
 
